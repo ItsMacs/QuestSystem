@@ -1,0 +1,48 @@
+#Configuration file for QuestSystem
+
+lang:
+  no-permission: "&cYou don't have permission!"
+  quest-usage: "&bUsage: &7/quest <start / stop> <player> <quest>"
+  quest-start-usage: "&bUsage: &7/quest start <player> <quest>"
+  quest-stop-usage: "&bUsage: &7/quest stop <player> <quest>"
+  no-player: "&cThere's no player with this name!"
+  quest-started-admin: "&aQuest started!"
+  quest-stopped-admin: "&aQuest stopped!"
+  quest-started: "&aQuest started!"
+  quest-started-subtitle: "&7%name%"
+  quest-stopped: "&cQuest complete!"
+  quest-stopped-subtitle: "&7%name%"
+
+
+#Types of step:
+# DIALOGUE: sentence/time (Example: Hi!/5)
+# LOCATION: worldname//x//y//z
+# MOB_KILL: TYPE/amount
+# ITEM_COLLECTION: MATERIAL/amount
+quests:
+  test:
+    name: Test Quest!
+    steps:
+      '1':
+        type: DIALOGUE
+        content: "&eNed: &fHi, I'm Ned and this will stay on for the default time (2 seconds!)"
+      '2':
+        type: DIALOGUE
+        content: "&eNed: &fThis will stay on for 5 seconds instead!/5"
+      '3':
+        type: LOCATION
+        content: world//-202//73//2529
+      '4':
+        type: DIALOGUE
+        content: "&eNed: &c&lGREAT! &fNow get 10 cobblestone!/10"
+      '5':
+        type: ITEM_COLLECTION
+        content: COBBLESTONE/10
+      '6':
+        type: DIALOGUE
+        content: "&eNed: &c&lGREAT! &fNow kill 2 zombies!/10"
+      '7':
+        type: MOB_KILL
+        content: ZOMBIE/2
+
+default-dialogue-duration: 2

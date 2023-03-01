@@ -1,0 +1,11 @@
+name: QuestSystem
+version: '${project.version}'
+main: eu.maxpi.fiverr.questsystem.QuestSystem
+api-version: 1.19
+authors: [ Macslolz ]
+description: Plugin to add quests to the server
+website: fiverr.com/macslolz
+
+commands:
+  quest:
+    description: Quest
