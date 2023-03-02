@@ -62,7 +62,7 @@ public class QuestProgressStep {
      */
     public void track(Player p){
         if (type == QuestProgressStepType.DIALOGUE) {
-            p.sendMessage(ColorTranslator.translate((String) checkObject));
+            p.sendMessage(ColorTranslator.translate((String) checkObject).replace("%player%", p.getName()));
             progress.put(p.getName(), ZonedDateTime.now().toEpochSecond() + duration);
             return;
         }
