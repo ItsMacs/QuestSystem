@@ -77,23 +77,27 @@ public class QuestProgressStep {
      */
     public boolean hasCompleted(Player p){
         switch (type) {
-            default -> {
-                return true;
-            }
             case DIALOGUE -> {
                 return ZonedDateTime.now().toEpochSecond() >= progress.getOrDefault(p.getName(), ZonedDateTime.now().toEpochSecond());
             }
+                
             case LOCATION -> {
                 Location l = (Location) checkObject;
                 if (l.getWorld() != p.getWorld()) return false;
 
                 return l.distance(p.getLocation()) < 5;
             }
+                
             case MOB_KILL -> {
                 return progress.getOrDefault(p.getName(), 0L) >= duration;
             }
+                
             case ITEM_COLLECTION -> {
                 return progress.getOrDefault(p.getName(), 0L) >= ((ItemStack) checkObject).getAmount();
+            }
+                
+            default -> {
+                return true;
             }
         }
     }
